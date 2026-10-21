@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Discovery Hub – Find legal places to watch, play, read and learn</title>
+<meta name="description" content="Discovery Hub links you to official, legal sources for movies, games, books, music, apps, software, learning and AI tools.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <a class="logo" href="index.html" aria-label="Discovery Hub home">
+    <svg viewBox="0 0 48 48" width="40" height="40" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><circle cx="24" cy="24" r="19"/><path d="M33 15 27 28l-12 5 6-13z" fill="currentColor" stroke="none"/></svg>
+    <span>Discovery <b>Hub</b></span>
+  </a>
+  <nav id="menu" class="menu" aria-label="Main">
+    <a href="index.html" class="active">Home</a>
+    <a href="#" data-cat="Movies">Movies</a>
+    <a href="#" data-cat="TV Shows">TV Shows</a>
+    <a href="#" data-cat="Games">Games</a>
+    <a href="#" data-cat="Books">Books</a>
+    <a href="#" data-cat="Music">Music</a>
+    <a href="#" data-cat="Apps">Apps</a>
+    <a href="#" data-cat="Software">Software</a>
+    <a href="#" data-cat="Learning">Learning</a>
+    <a href="#" data-cat="AI Tools">AI Tools</a>
+    <a href="pages/about.html">About</a>
+    <a href="pages/contact.html">Contact</a>
+  </nav>
+  <button id="burger" class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">☰</button>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="hero-text">
+      <p class="welcome">Welcome to</p>
+      <h1>Discovery <b>Hub</b></h1>
+      <p>Find official, legal places to watch, play, read, listen and learn — all in one place.</p>
+    </div>
+    <form id="searchForm" class="search" role="search">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Search for movies, games, books, learning materials, or AI tools…" aria-label="Search">
+      <button type="submit" aria-label="Search">Go</button>
+    </form>
+  </section>
+
+  <section class="filters" aria-label="Filters">
+    <div id="catTabs" class="chips" role="tablist" aria-label="Categories"></div>
+    <div id="typeFilters" class="chips small" aria-label="Quick filters"></div>
+  </section>
+
+  <!-- Results (shown when searching/filtering) -->
+  <section id="results" class="block" hidden>
+    <div class="block-head"><h2 id="resultsTitle">Results</h2><button id="clearBtn" class="link">Clear filters</button></div>
+    <div id="resultsGrid" class="grid"></div>
+    <p id="empty" class="empty" hidden>No matches yet. Try a different word, or clear the filters.</p>
+  </section>
+
+  <!-- Home sections -->
+  <div id="home">
+    <section class="block">
+      <div class="block-head"><h2>Explore Categories</h2></div>
+      <div id="catTiles" class="tiles"></div>
+    </section>
+
+    <section class="block">
+      <div class="block-head"><h2><span aria-hidden="true">🔥</span> Trending Now</h2></div>
+      <div id="trending" class="row"></div>
+    </section>
+
+    <div class="ad" aria-label="Advertisement"><span>Advertisement</span></div>
+
+    <section class="block quick">
+      <div class="block-head"><h2><span aria-hidden="true">⚡</span> Quick Links</h2></div>
+      <div id="quickLinks" class="quick-grid"></div>
+    </section>
+
+    <section class="block">
+      <div class="block-head"><h2><span aria-hidden="true">⭐</span> Recommended for You</h2></div>
+      <div id="recommended" class="row compact"></div>
+    </section>
+
+    <div class="ad" aria-label="Advertisement"><span>Advertisement</span></div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="foot-grid">
+    <div>
+      <h3>Discovery Hub</h3>
+      <p>A simple guide to official sources for entertainment, apps and learning. We link out — we never host content.</p>
+      <p class="social"><a href="#" aria-label="X">X</a><a href="#" aria-label="Instagram">IG</a><a href="#" aria-label="YouTube">YT</a><a href="#" aria-label="Discord">DC</a></p>
+    </div>
+    <div>
+      <h3>Quick links</h3>
+      <a href="index.html">Home</a><a href="pages/about.html">About</a><a href="pages/contact.html">Contact</a>
+    </div>
+    <div>
+      <h3>Legal</h3>
+      <a href="pages/privacy.html">Privacy Policy</a><a href="pages/terms.html">Terms of Service</a><a href="pages/disclaimer.html">Disclaimer</a><a href="pages/contact.html">Contact</a>
+    </div>
+  </div>
+  <p class="disclaimer">This website only provides information and links to official/legal sources. We do not host copyrighted content. Availability and pricing may vary by country.</p>
+  <p class="copy">© <span id="year"></span> Discovery Hub. All rights reserved.</p>
+</footer>
+
+<nav class="bottom" aria-label="Mobile">
+  <a href="index.html" class="active"><span>🏠</span>Home</a>
+  <a href="#" id="bSearch"><span>🔍</span>Search</a>
+  <a href="#catTiles" id="bCats"><span>▦</span>Categories</a>
+  <a href="#quickLinks"><span>🔗</span>Quick Links</a>
+</nav>
+
+<div id="modal" class="modal" hidden>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <button id="mClose" class="close" aria-label="Close">✕</button>
+    <div id="mThumb" class="thumb big"></div>
+    <div class="m-body">
+      <div class="m-meta"><span id="mCat" class="badge"></span><span id="mPrice" class="price"></span></div>
+      <h2 id="mTitle"></h2>
+      <p id="mSource" class="source"></p>
+      <p id="mDesc"></p>
+      <div id="mTags" class="tags"></div>
+      <a id="mLink" class="btn" target="_blank" rel="noopener noreferrer">Visit Official Site</a>
+      <p class="note">Please use official sources only. Availability may depend on your country.</p>
+    </div>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
