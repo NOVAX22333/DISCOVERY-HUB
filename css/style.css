@@ -157,3 +157,9 @@ h2{font-size:1.3rem}
 }
 @media(max-width:480px){.tiles{grid-template-columns:repeat(3,1fr)}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* Real images (posters, covers) */
+.thumb.photo{background-size:cover;background-position:center;font-size:0;height:190px}
+.compact .thumb.photo{height:84px}
+.thumb.photo .badge{font-size:.72rem}
+.thumb.big.photo{height:240px}
